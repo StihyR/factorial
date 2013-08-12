@@ -1,6 +1,7 @@
 function fineFactorials() {
-  var	maxDecNumb = 9,
+	var	maxDecNumb = 9,
 		maxDigit,
+		factorionsList = [],
 		factsArr = [],
 		calcFactorial = function (number) {
 			var i,
@@ -47,7 +48,7 @@ function fineFactorials() {
 				return
 				
 			if (isFine(branchStr, branchSum))
-				console.log(branchStr + ' : ' + branchSum)
+				factorionsList.push(branchSum)
 
 			for (i = 0; i <= level; i++)  {
 				subBranchStr = branchStr + i
@@ -64,7 +65,9 @@ function fineFactorials() {
 			maxDigit = maxSumLength()
 			for (i = 1; i <= maxDecNumb; i++)
 				aroundTree(i,i.toString(),factsArr[i])
+				
+			return factorionsList
 		}
 		
-	ini();
+	return ini()
 }
